@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "ChatGPT Notes",
+    "version": "1.0",
+    "description": "Save and manage notes from ChatGPT conversations",
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://chat.openai.com/*",
+                "https://chatgpt.com/*"
+            ],
+            "js": ["content.js"],
+            "run_at": "document_idle"
+        }
+    ],
+    "browser_action": {
+        "default_popup": "popup.html"
+    }
+}
